@@ -67,7 +67,8 @@ namespace SharedLibrary.Middleware
         {
             //Display message to the client
             context.Response.ContentType = "application/json";
-            await context.Response.WriteAsync(JsonSerializer.Serialize(new ProblemDetails({
+            await context.Response.WriteAsync(JsonSerializer.Serialize(new ProblemDetails()
+            {
                 Detail = message,
                 Status = statusCode,
                 Title = title
